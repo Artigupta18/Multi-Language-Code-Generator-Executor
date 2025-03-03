@@ -19,7 +19,7 @@ from langchain.callbacks.base import BaseCallbackHandler
 callback_manager = CallbackManager([BaseCallbackHandler()])
 
 api_key=st.secrets["API_KEY"]
-genai.configure(api_key="API_KEY")
+genai.configure(api_key=api_key)
 
 # Load Free Sentence Transformer Model for Embeddings
 embedding_model = SentenceTransformer("all-MiniLM-L6-v2")
