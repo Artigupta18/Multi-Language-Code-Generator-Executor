@@ -14,11 +14,10 @@ from langchain.vectorstores import FAISS
 from sentence_transformers import SentenceTransformer
 from langchain_core.callbacks import CallbackManager
 from langchain.callbacks.base import BaseCallbackHandler
-
+import os 
 # Set up Gemini API
-callback_manager = CallbackManager([BaseCallbackHandler()])
 
-api_key=st.secrets["API_KEY"]
+api_key = os.getenv("API_KEY", "your-api-key")
 genai.configure(api_key=api_key)
 
 # Load Free Sentence Transformer Model for Embeddings
