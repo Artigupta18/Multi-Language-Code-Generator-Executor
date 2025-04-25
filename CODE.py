@@ -64,7 +64,7 @@ memory = ConversationBufferMemory(memory_key="chat_history", return_messages=Tru
 
 # Define function for code generation using Gemini API
 def generate_code(prompt):
-    model = genai.GenerativeModel("gemini-1.5-flash")  # Load the Gemini model
+    model = genai.GenerativeModel("gemini-2.0-flash")  # Load the Gemini model
     response = model.generate_content(prompt)  # Correct method for text generation
     return response.text
 
